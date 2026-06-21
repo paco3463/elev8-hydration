@@ -1,8 +1,10 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="js">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2F3437">
+<meta name="mobile-web-app-capable" content="yes">
 <title>Elev8 Hydration Therapy &mdash; Mobile IV Therapy &amp; Wellness Drips</title>
 <meta name="description" content="Clinician-led IV hydration therapy delivered to your home, gym, or our Miami studio. Recover faster, perform better, feel elevated.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -557,25 +559,91 @@ p { margin: 0 0 1em; color: var(--charcoal-2); }
   .cta-band { padding: 46px 32px; }
 }
 @media (max-width: 760px) {
-  :root { --header-h: 68px; }
-  .nav-links, .header-cta .btn { display: none; }
+  :root { --header-h: 64px; }
+
+  /* ---- nav: hamburger + persistent compact Book CTA ---- */
+  .nav-links { display: none; }
+  .header-cta .btn-light, .header-cta .btn-ghost { display: none; }
+  .header-cta { gap: 8px; }
+  .header-cta .btn-primary { display: inline-flex; padding: 9px 15px; min-height: 0; font-size: .82rem; }
   .menu-toggle { display: inline-flex; }
-  .section { padding: 68px 0; }
+  .container { padding: 0 18px; }
+
+  /* ---- spacing ---- */
+  .section { padding: 54px 0; }
+  .section.tight { padding: 38px 0; }
+
+  /* ---- layout collapse ---- */
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .option-grid { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .booking-body { padding: 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 26px; }
+  .steps { grid-template-columns: 1fr; gap: 12px; }
+
+  /* ---- typography tuned for phones ---- */
+  .hero h1 { font-size: 2.35rem; line-height: 1.14; }
+  .hero .hero-sub { font-size: 1.02rem; }
+  .page-hero { padding-top: calc(var(--header-h) + 54px); padding-bottom: 50px; }
+  .page-hero h1 { font-size: 2rem; }
+  .lede, .page-hero .lede { font-size: 1rem; }
+  h2 { font-size: 1.7rem; }
+  .section-head h2 { font-size: 1.7rem; }
+  .cta-band h2 { font-size: 1.75rem; }
+  .eyebrow { font-size: 10.5px; letter-spacing: .22em; }
+  .marquee-track { gap: 30px; }
+  .marquee-track span { font-size: 1.02rem; }
+  .stat .num { font-size: 2.2rem; }
+  .price { font-size: 2.6rem; }
+  .iv-card h3 { font-size: 1.3rem; }
+
+  /* ---- buttons: full-width, comfortable tap targets ---- */
+  .btn { padding: 15px 22px; font-size: .98rem; min-height: 52px; }
+  .btn-sm { padding: 12px 18px; min-height: 46px; }
+  .hero-actions { gap: 10px; }
+  .hero-actions .btn { flex: 1 1 100%; width: 100%; }
+
+  /* ---- mobile drawer menu ---- */
+  .mobile-nav { padding: 18px 20px calc(30px + env(safe-area-inset-bottom)); }
+  .mobile-nav ul { margin-top: 20px; }
+  .mobile-nav a { font-size: 1.4rem; padding: 16px 4px; }
+  .mobile-nav .m-cta { gap: 10px; }
+  .mobile-nav .m-cta .btn { width: 100%; }
+
+  /* ---- cards / panels ---- */
+  .card { padding: 22px; border-radius: 22px; }
+  .plan { padding: 28px 24px; }
+  .cta-band { padding: 34px 22px; border-radius: 26px; }
+  .cta-band::before { width: 240px; height: 240px; }
+
+  /* ---- booking ---- */
+  .booking-body { padding: 22px 18px; }
   .booking-progress .bp { font-size: 0; padding: 14px 4px; }
   .booking-progress .bp .bp-n { font-size:.8rem; margin: 0; }
-  .tabbar { display: flex; }
-  body.has-tabbar { padding-bottom: 86px; }
-  .cta-band { padding: 38px 24px; }
-  .hero-badges { gap: 16px; }
+  .book-actions { flex-direction: column-reverse; gap: 10px; }
+  .book-actions .btn { width: 100%; }
+
+  /* ---- bottom tab bar (with safe-area inset) ---- */
+  .tabbar { display: flex; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); }
+  .tabbar a { font-size: .62rem; padding: 6px 4px; gap: 2px; }
+  body.has-tabbar { padding-bottom: 94px; }
+
+  /* ---- hero badges stack cleanly ---- */
+  .hero-badges { gap: 12px; flex-direction: column; align-items: flex-start; margin-top: 34px; }
 }
 @media (max-width: 460px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .stat-row { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 22px; }
+  .stat-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .container { padding: 0 16px; }
+  .brand { font-size: 1.18rem; }
+  .brand .logo-mark { width: 30px; height: 30px; font-size: .85rem; }
+  .hero h1 { font-size: 2.05rem; }
+  .page-hero h1 { font-size: 1.78rem; }
+  h2, .section-head h2 { font-size: 1.5rem; }
+  .price { font-size: 2.3rem; }
+  .iv-price { font-size: 1.3rem; }
+  .tag { font-size: .72rem; padding: 5px 11px; }
+  .billing-toggle button { padding: 9px 14px; font-size: .82rem; }
+  .quote-card p { font-size: 1rem; }
 }
 
 
